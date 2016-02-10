@@ -9,9 +9,11 @@ namespace ClockMock
 {
     public class ExpirationChecker
     {
-        public bool HasExpired()
+        public bool HasExpired(DateTime dateTime)
         {
-            return false;
+            if (DateTime.Now < dateTime)
+                return false;
+            return true;
         }
     }
 }
